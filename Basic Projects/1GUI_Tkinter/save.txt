@@ -1,0 +1,1 @@
+C:/Program Files/Mozilla Firefox/firefox.exe,C:/Program Files/Internet Explorer/iexplore.exe,C:/Program Files/VideoLAN/VLC/vlc.exe,
