@@ -1,0 +1,151 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram id="migration_diagram" name="Teradata to GCP Migration">
+    <mxGraphModel dx="1213" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1400" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" value="Teradata to GCP Data Migration - Detailed Architecture" vertex="1">
+          <mxGeometry height="40" width="1300" x="50" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="source_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#0066cc;" value="SOURCE LAYER" vertex="1">
+          <mxGeometry height="30" width="150" x="50" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="teradata" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=11;fontStyle=1;" value="Teradata Database (Source System)" vertex="1">
+          <mxGeometry height="70" width="150" x="80" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="assess_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#0066cc;" value="ASSESSMENT AND PLANNING" vertex="1">
+          <mxGeometry height="30" width="200" x="50" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="assess_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=10;" value="Schema Analysis, Data Profiling, Workload Assessment" vertex="1">
+          <mxGeometry height="80" width="150" x="80" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="extract_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#0066cc;" value="EXTRACTION LAYER" vertex="1">
+          <mxGeometry height="30" width="200" x="50" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="dms" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4e6f1;strokeColor=#3498db;strokeWidth=2;fontSize=11;fontStyle=1;" value="AWS DMS / Custom ETL (Data Extraction)" vertex="1">
+          <mxGeometry height="70" width="150" x="80" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="gcs_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#0066cc;" value="GCP INGESTION AND STORAGE" vertex="1">
+          <mxGeometry height="30" width="220" x="330" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gcs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#66bb6a;strokeWidth=2;fontSize=11;fontStyle=1;" value="Google Cloud Storage (GCS): Staging Bucket, Raw Data Landing" vertex="1">
+          <mxGeometry height="90" width="180" x="350" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="pubsub" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#ec407a;strokeWidth=2;fontSize=11;fontStyle=1;" value="Pub/Sub (Event Notification)" vertex="1">
+          <mxGeometry height="90" width="140" x="600" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="transform_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#0066cc;" value="TRANSFORMATION AND ORCHESTRATION" vertex="1">
+          <mxGeometry height="30" width="300" x="320" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="composer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ffb74d;strokeWidth=2;fontSize=11;fontStyle=1;" value="Cloud Composer (Apache Airflow): Orchestration, DAG Scheduling, Data Quality Checks" vertex="1">
+          <mxGeometry height="110" width="180" x="350" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="0jpOUugegAkqOZ-7E2j7-7" edge="1" parent="1" source="dataflow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="bigtable" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dataflow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ffb74d;strokeWidth=2;fontSize=11;fontStyle=1;" value="Dataflow (Apache Beam): Batch Processing, Stream Processing, Transformations" vertex="1">
+          <mxGeometry height="110" width="180" x="580" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="load_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#0066cc;" value="DATA LOADING AND ANALYTICS" vertex="1">
+          <mxGeometry height="30" width="300" x="320" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="0jpOUugegAkqOZ-7E2j7-5" edge="1" parent="1" source="bigquery" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="looker" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bigquery" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c5cae9;strokeColor=#3f51b5;strokeWidth=2;fontSize=11;fontStyle=1;" value="BigQuery: Data Warehouse, Analytics Engine, Real-time Insights" vertex="1">
+          <mxGeometry height="110" width="180" x="330" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="0jpOUugegAkqOZ-7E2j7-6" edge="1" parent="1" source="bigtable" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="datastudio" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bigtable" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c5cae9;strokeColor=#3f51b5;strokeWidth=2;fontSize=11;fontStyle=1;" value="Bigtable (NoSQL): Time-series Data, High-throughput" vertex="1">
+          <mxGeometry height="110" width="180" x="580" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="monitor_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#0066cc;" value="MONITORING AND SECURITY" vertex="1">
+          <mxGeometry height="30" width="220" x="850" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="logging" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#ff7043;strokeWidth=2;fontSize=10;" value="Cloud Logging (Stackdriver): Log Aggregation, Debug Tracking" vertex="1">
+          <mxGeometry height="90" width="170" x="850" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="monitoring" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#ff7043;strokeWidth=2;fontSize=10;" value="Cloud Monitoring: Performance Metrics, Alerts and Dashboards" vertex="1">
+          <mxGeometry height="90" width="170" x="1060" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kms" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f4c3;strokeColor=#9ccc65;strokeWidth=2;fontSize=10;" value="Cloud KMS (Key Management): Encryption at Rest, Access Control" vertex="1">
+          <mxGeometry height="90" width="170" x="850" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="iam" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f4c3;strokeColor=#9ccc65;strokeWidth=2;fontSize=10;" value="Cloud IAM: Role Management, Access Policies" vertex="1">
+          <mxGeometry height="90" width="170" x="1050" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#0066cc;" value="ANALYTICS AND REPORTING" vertex="1">
+          <mxGeometry height="30" width="300" x="330" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="looker" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#ab47bc;strokeWidth=2;fontSize=11;fontStyle=1;" value="Looker Studio: Business Intelligence, Dashboards" vertex="1">
+          <mxGeometry height="90" width="170" x="335" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="datastudio" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#ab47bc;strokeWidth=2;fontSize=11;fontStyle=1;" value="Data Portal: Self-service Analytics" vertex="1">
+          <mxGeometry height="90" width="170" x="585" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="phase_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#0066cc;" value="MIGRATION PHASES" vertex="1">
+          <mxGeometry height="30" width="200" x="70" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="0jpOUugegAkqOZ-7E2j7-1" edge="1" parent="1" source="phase1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="phase2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;strokeWidth=2;fontSize=10;fontStyle=1;" value="PHASE 1: Planning and Assessment" vertex="1">
+          <mxGeometry height="70" width="140" x="80" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="0jpOUugegAkqOZ-7E2j7-2" edge="1" parent="1" source="phase2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="phase3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;strokeWidth=2;fontSize=10;fontStyle=1;" value="PHASE 2: Infrastructure and Setup" vertex="1">
+          <mxGeometry height="70" width="140" x="270" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="0jpOUugegAkqOZ-7E2j7-3" edge="1" parent="1" source="phase3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="phase4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;strokeWidth=2;fontSize=10;fontStyle=1;" value="PHASE 3: Data Migration and Testing" vertex="1">
+          <mxGeometry height="70" width="140" x="460" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="0jpOUugegAkqOZ-7E2j7-4" edge="1" parent="1" source="phase4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="phase5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="phase4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;strokeWidth=2;fontSize=10;fontStyle=1;" value="PHASE 4: Validation and Optimization" vertex="1">
+          <mxGeometry height="70" width="140" x="640" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="phase5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;strokeWidth=2;fontSize=10;fontStyle=1;" value="PHASE 5: Cutover and Support" vertex="1">
+          <mxGeometry height="70" width="140" x="820" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="teradata" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="assess_box" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="assess_box" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="dms" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="dms" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="gcs" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="gcs" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="pubsub" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="gcs" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" target="composer" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="pubsub" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="dataflow" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="composer" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="dataflow" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="dataflow" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" target="bigquery" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="kms" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;exitX=0;exitY=0.5;entryX=1;entryY=0.8;" target="bigquery" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge13" edge="1" parent="1" source="iam" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;exitX=0;exitY=0.5;entryX=1;entryY=0.2;" target="composer" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,232 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram id="bq_composer_migration" name="Teradata to BQ via Cloud Composer">
+    <mxGraphModel dx="2103" dy="695" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="2500" background="#ffffff" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="main_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=16;fontStyle=1;fontColor=#000000;" value="Teradata to BigQuery Migration via Cloud Composer - Detailed Planning and Implementation" vertex="1">
+          <mxGeometry height="35" width="1500" x="-300" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1;fontColor=#1976d2;backgroundColor=#e3f2fd;" value="PHASE 1: PRE-MIGRATION ASSESSMENT AND PLANNING" vertex="1">
+          <mxGeometry height="30" width="500" x="50" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="plan_docs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;strokeWidth=2;fontSize=11;fontStyle=1;" value="Documentation and Planning" vertex="1">
+          <mxGeometry height="60" width="180" x="50" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="plan_docs_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#90caf9;strokeWidth=1;fontSize=8.5;" value="Inventory: Table count, sizes, schema complexity, dependencies, refresh frequency, data types, constraints, indexes, partitioning strategy" vertex="1">
+          <mxGeometry height="100" width="180" x="50" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="migration_strategy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;strokeWidth=2;fontSize=11;fontStyle=1;" value="Migration Strategy Definition" vertex="1">
+          <mxGeometry height="60" width="180" x="280" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="migration_strategy_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#90caf9;strokeWidth=1;fontSize=8.5;" value="Table by Table: Sequential load, Batch Processing: Parallel groups, Initial Full Load vs Incremental, CDC or snapshot-based, Scheduling frequency, Recovery mechanism, Data validation rules" vertex="1">
+          <mxGeometry height="100" width="180" x="290" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="infrastructure_plan" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;strokeWidth=2;fontSize=11;fontStyle=1;" value="Infrastructure Planning" vertex="1">
+          <mxGeometry height="60" width="180" x="510" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="infrastructure_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#90caf9;strokeWidth=1;fontSize=8.5;" value="GCP Project setup, VPC Network, Service accounts, IAM roles, Private IP routing, Monitoring setup, Budget estimation, Disaster recovery plan, Compliance requirements" vertex="1">
+          <mxGeometry height="100" width="180" x="520" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="resource_mapping" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;strokeWidth=2;fontSize=11;fontStyle=1;" value="Resource and Mapping Document" vertex="1">
+          <mxGeometry height="60" width="180" x="740" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="resource_mapping_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#90caf9;strokeWidth=1;fontSize=8.5;" value="Source to target table mapping, Column name and type conversion, Lookup table dependencies, Data transformation logic, Sensitive data masking, BigQuery partition strategy, Clustering strategy, Data retention policies" vertex="1">
+          <mxGeometry height="100" width="180" x="740" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1;fontColor=#d32f2f;backgroundColor=#ffebee;" value="PHASE 2: CI/CD PIPELINE AND AUTOMATION SETUP" vertex="1">
+          <mxGeometry height="30" width="500" x="50" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="jenkins" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=2;fontSize=11;fontStyle=1;" value="Jenkins Pipeline Optional" vertex="1">
+          <mxGeometry height="60" width="160" x="50" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="jenkins_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0d2;strokeColor=#ffab91;strokeWidth=1;fontSize=8.5;" value="Git integration, Build triggers, DAG validation, Docker image build, Push to Artifact Registry, Unit testing, Environment deployment, YAML pipeline definition" vertex="1">
+          <mxGeometry height="100" width="160" x="50" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="docker" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=2;fontSize=11;fontStyle=1;" value="Docker and Containerization" vertex="1">
+          <mxGeometry height="60" width="160" x="240" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="docker_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0d2;strokeColor=#ffab91;strokeWidth=1;fontSize=8.5;" value="Custom images for Teradata extraction, Python dependencies, Teradata JDBC drivers, Image versioning, Artifact Registry storage, Security scanning, Base image selection, Network isolation" vertex="1">
+          <mxGeometry height="100" width="160" x="240" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="cloudfunc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=2;fontSize=11;fontStyle=1;" value="Cloud Functions Setup" vertex="1">
+          <mxGeometry height="60" width="160" x="430" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="cloudfunc_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0d2;strokeColor=#ffab91;strokeWidth=1;fontSize=8.5;" value="GCS file upload triggers, Pre-processing validation, Data quality checks, Pub/Sub notifications, Error handling, Budget alerts, Memory allocation, Timeout config, Cold start optimization" vertex="1">
+          <mxGeometry height="100" width="160" x="430" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="git" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=2;fontSize=11;fontStyle=1;" value="Version Control and Git" vertex="1">
+          <mxGeometry height="60" width="160" x="620" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="git_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0d2;strokeColor=#ffab91;strokeWidth=1;fontSize=8.5;" value="GitHub or Cloud Source Repos, Branching strategy, Commit standards, Pull request workflows, Code review, RBAC, DAG versioning, Secret management, .gitignore rules" vertex="1">
+          <mxGeometry height="100" width="160" x="620" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1;fontColor=#f57c00;backgroundColor=#fff3e0;" value="PHASE 3: DATA EXTRACTION AND INGESTION" vertex="1">
+          <mxGeometry height="30" width="500" x="50" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="teradata" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=11;fontStyle=1;" value="Teradata Source Database" vertex="1">
+          <mxGeometry height="70" width="150" x="40" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="extraction_methods" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ffb74d;strokeWidth=2;fontSize=11;fontStyle=1;" value="Extraction Methods" vertex="1">
+          <mxGeometry height="70" width="160" x="235" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="extraction_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#ce93d8;strokeWidth=1;fontSize=8.5;" value="Full table export initial load, Incremental export with CDC timestamp, Query-based extraction, Parallel thread extraction, Partitioned by date ranges, Compression Gzip or Snappy, Parquet or CSV format, Batch size optimization, Error handling retry logic" vertex="1">
+          <mxGeometry height="110" width="160" x="240" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="gcs_staging" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#66bb6a;strokeWidth=2;fontSize=11;fontStyle=1;" value="GCS Staging Area" vertex="1">
+          <mxGeometry height="70" width="160" x="430" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="gcs_staging_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#a5d6a7;strokeWidth=1;fontSize=8.5;" value="Bucket structure: raw, processing, archive, Folder hierarchy by source and table, File naming convention, Lifecycle policies, Versioning settings, Access control IAM, Retention policies, Data encryption at rest" vertex="1">
+          <mxGeometry height="110" width="160" x="430" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="validation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#26a69a;strokeWidth=2;fontSize=11;fontStyle=1;" value="Data Quality Validation" vertex="1">
+          <mxGeometry height="70" width="160" x="640" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="validation_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2f1;strokeColor=#80cbc4;strokeWidth=1;fontSize=8.5;" value="Row count validation, Checksum validation MD5 SHA256, Null value checks, Data type validation, Range and pattern matching, Duplicate detection, Referential integrity, Custom business logic, Automated alerts on failure" vertex="1">
+          <mxGeometry height="110" width="160" x="630" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="phase4_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1;fontColor=#1565c0;backgroundColor=#e8eaf6;" value="PHASE 4: CLOUD COMPOSER ORCHESTRATION AND SCHEDULING" vertex="1">
+          <mxGeometry height="30" width="700" x="50" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="dag_design" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c5cae9;strokeColor=#3f51b5;strokeWidth=2;fontSize=11;fontStyle=1;" value="DAG Design and Structure" vertex="1">
+          <mxGeometry height="60" width="160" x="50" y="1129" as="geometry" />
+        </mxCell>
+        <mxCell id="dag_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#9fa8da;strokeWidth=1;fontSize=8.5;" value="One DAG per table or batch group, Modular task design extract validate load, Task dependencies, Start date and schedule, Backfill capability, Idempotent design, Timeout settings, Retry policies exponential backoff, Dynamic task generation" vertex="1">
+          <mxGeometry height="110" width="160" x="50" y="1219" as="geometry" />
+        </mxCell>
+        <mxCell id="scheduling" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c5cae9;strokeColor=#3f51b5;strokeWidth=2;fontSize=11;fontStyle=1;" value="Scheduling Options" vertex="1">
+          <mxGeometry height="60" width="160" x="240" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="scheduling_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#9fa8da;strokeWidth=1;fontSize=8.5;" value="Cron expression syntax 0 2 * * *, Timezone configuration UTC, Catchup strategy backfill, External trigger Pub/Sub, Manual trigger, Parallelization sequential vs parallel, Resource pool allocation, Dynamic scheduling, SLA monitoring" vertex="1">
+          <mxGeometry height="110" width="160" x="240" y="1210" as="geometry" />
+        </mxCell>
+        <mxCell id="operators" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c5cae9;strokeColor=#3f51b5;strokeWidth=2;fontSize=11;fontStyle=1;" value="Custom Operators and Plugins" vertex="1">
+          <mxGeometry height="60" width="160" x="430" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="operators_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#9fa8da;strokeWidth=1;fontSize=8.5;" value="TeradataOperator, BigQueryInsertJobOperator, GCSToGCSOperator, BashOperator, PythonOperator, SparkSqlOperator, Data quality operators Great Expectations, Custom hooks for Teradata, Sensor operators" vertex="1">
+          <mxGeometry height="110" width="160" x="430" y="1210" as="geometry" />
+        </mxCell>
+        <mxCell id="variables" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c5cae9;strokeColor=#3f51b5;strokeWidth=2;fontSize=11;fontStyle=1;" value="Variable and Config Management" vertex="1">
+          <mxGeometry height="60" width="160" x="50" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="variables_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#9fa8da;strokeWidth=1;fontSize=8.5;" value="Airflow Variables table mappings, Connections Teradata BigQuery GCS, Secret Manager integration, Environment variables per env, DAG parameters, Template variables in SQL, Sensitive data separation" vertex="1">
+          <mxGeometry height="110" width="160" x="50" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="error_handling" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c5cae9;strokeColor=#3f51b5;strokeWidth=2;fontSize=11;fontStyle=1;" value="Error Handling and Recovery" vertex="1">
+          <mxGeometry height="60" width="160" x="240" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="error_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#9fa8da;strokeWidth=1;fontSize=8.5;" value="Task retry exponential backoff, Max retries per task, Failure callbacks, Email and Slack notifications, Task sensor, Conditional branching, Trigger rules, Dead letter queue, Parent task failure, SLA callbacks" vertex="1">
+          <mxGeometry height="110" width="160" x="240" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="comp_monitoring" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c5cae9;strokeColor=#3f51b5;strokeWidth=2;fontSize=11;fontStyle=1;" value="Cloud Composer Monitoring" vertex="1">
+          <mxGeometry height="60" width="160" x="430" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="comp_monitoring_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#9fa8da;strokeWidth=1;fontSize=8.5;" value="Airflow Web UI, Task execution history, XCom inter-task communication, Task duration tracking, Scheduler and worker monitoring, Resource utilization, Cloud Monitoring metrics, Custom metrics, Dry run and test" vertex="1">
+          <mxGeometry height="110" width="160" x="430" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="phase5_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1;fontColor=#00796b;backgroundColor=#e0f2f1;" value="PHASE 5: BIGQUERY LOADING AND ANALYTICS" vertex="1">
+          <mxGeometry height="30" width="700" x="50" y="1650" as="geometry" />
+        </mxCell>
+        <mxCell id="bq_setup" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#80cbc4;strokeColor=#26a69a;strokeWidth=2;fontSize=11;fontStyle=1;" value="BigQuery Setup and Schema" vertex="1">
+          <mxGeometry height="70" width="160" x="60" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="bq_setup_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2f1;strokeColor=#80cbc4;strokeWidth=1;fontSize=8.5;" value="Dataset creation, Table schema definition, Partition strategy ingestion time or column, Clustering columns, Time partitioning daily loads, Expiration policies TTL, Snapshots, Nested fields, JSON schema, Cost optimization" vertex="1">
+          <mxGeometry height="110" width="160" x="50" y="1820" as="geometry" />
+        </mxCell>
+        <mxCell id="bq_loading" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#80cbc4;strokeColor=#26a69a;strokeWidth=2;fontSize=11;fontStyle=1;" value="Data Loading Methods" vertex="1">
+          <mxGeometry height="70" width="160" x="250" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="bq_loading_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2f1;strokeColor=#80cbc4;strokeWidth=1;fontSize=8.5;" value="Batch load from GCS, Streaming inserts real-time, MERGE queries for upserts, INSERT SELECT, External tables, Temporary tables staging, Insert overwrite, Load job with skip bad records, Transformation in load" vertex="1">
+          <mxGeometry height="110" width="160" x="250" y="1820" as="geometry" />
+        </mxCell>
+        <mxCell id="bq_transform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#80cbc4;strokeColor=#26a69a;strokeWidth=2;fontSize=11;fontStyle=1;" value="Post-Load Transformations" vertex="1">
+          <mxGeometry height="70" width="160" x="440" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="bq_transform_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2f1;strokeColor=#80cbc4;strokeWidth=1;fontSize=8.5;" value="SQL-based transformations, Views for logical layering, Materialized views for performance, Scheduled queries incremental, DBT integration, dbt Cloud, dbt models and tests, Data lineage, Surrogate key generation, Type 2 SCD" vertex="1">
+          <mxGeometry height="110" width="160" x="440" y="1820" as="geometry" />
+        </mxCell>
+        <mxCell id="phase6_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1;fontColor=#c62828;backgroundColor=#ffebee;" value="PHASE 6: TESTING, VALIDATION, AND SIGN-OFF" vertex="1">
+          <mxGeometry height="30" width="700" x="50" y="2060" as="geometry" />
+        </mxCell>
+        <mxCell id="eJVWE_5TaZ0MzyNeYDR6-1" edge="1" parent="1" source="data_quality" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" target="performance" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="data_quality" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef9a9a;strokeColor=#c62828;strokeWidth=2;fontSize=11;fontStyle=1;" value="Data Quality Checks" vertex="1">
+          <mxGeometry height="60" width="150" x="55" y="2120" as="geometry" />
+        </mxCell>
+        <mxCell id="eJVWE_5TaZ0MzyNeYDR6-2" edge="1" parent="1" source="performance" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" target="uat" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="performance" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef9a9a;strokeColor=#c62828;strokeWidth=2;fontSize=11;fontStyle=1;" value="Performance Testing" vertex="1">
+          <mxGeometry height="60" width="150" x="240" y="2120" as="geometry" />
+        </mxCell>
+        <mxCell id="eJVWE_5TaZ0MzyNeYDR6-3" edge="1" parent="1" source="uat" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" target="documentation" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uat" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef9a9a;strokeColor=#c62828;strokeWidth=2;fontSize=11;fontStyle=1;" value="User Acceptance Testing UAT" vertex="1">
+          <mxGeometry height="60" width="150" x="420" y="2120" as="geometry" />
+        </mxCell>
+        <mxCell id="documentation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef9a9a;strokeColor=#c62828;strokeWidth=2;fontSize=11;fontStyle=1;" value="Final Documentation" vertex="1">
+          <mxGeometry height="60" width="150" x="600" y="2120" as="geometry" />
+        </mxCell>
+        <mxCell id="flow1" edge="1" parent="1" source="plan_docs" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="migration_strategy" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow2" edge="1" parent="1" source="migration_strategy" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="infrastructure_plan" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow3" edge="1" parent="1" source="infrastructure_plan" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="resource_mapping" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow4" edge="1" parent="1" source="plan_docs" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="jenkins" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow5" edge="1" parent="1" source="jenkins" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="docker" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow6" edge="1" parent="1" source="docker" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="cloudfunc" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow7" edge="1" parent="1" source="cloudfunc" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="git" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow8" edge="1" parent="1" source="teradata" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="extraction_methods" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow9" edge="1" parent="1" source="extraction_methods" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="gcs_staging" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow10" edge="1" parent="1" source="gcs_staging" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="validation" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow11" edge="1" parent="1" source="validation" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.2;entryY=0;" target="dag_design" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow12" edge="1" parent="1" source="dag_design" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="scheduling" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow13" edge="1" parent="1" source="scheduling" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="operators" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow14" edge="1" parent="1" source="dag_design" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="variables" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow15" edge="1" parent="1" source="variables" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="error_handling" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow16" edge="1" parent="1" source="error_handling" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="comp_monitoring" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow17" edge="1" parent="1" source="operators" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.2;entryY=0;" target="bq_setup" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow18" edge="1" parent="1" source="bq_setup" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="bq_loading" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow19" edge="1" parent="1" source="bq_loading" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="bq_transform" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
