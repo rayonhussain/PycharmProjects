@@ -1,0 +1,4 @@
+sqlalchemy==2.0.25
+pymysql==1.1.0
+google-cloud-bigquery==3.17.0
+google-auth==2.27.0
